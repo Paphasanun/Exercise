@@ -39,6 +39,7 @@ class Carousel extends Component {
         <img
           style={{ maxHeight: "400px" }}
           src={picList[this.state.slidePage]}
+          alt="55"
         />
         <button
           style={{

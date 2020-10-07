@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Carousel from "./Components/Carousel";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  state = {
+    count: 0,
+  };
+  render() {
+
+    return (
+      <div>
+        <div
+          style={{ margin: "50px auto", width: "50px", textAlign: "center" }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <button
+            onClick={() => this.setState({ count: this.state.count + 1 })}
+          >
+            +
+          </button>
+          <p>{this.state.count}</p>
+          <button
+            onClick={() => this.setState({ count: this.state.count - 1 })}
+          >
+            -
+          </button>
+        </div>
+        <Carousel />
+      </div>
+    );
+  }
 }
 
 export default App;
